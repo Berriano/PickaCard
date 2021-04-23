@@ -1,4 +1,7 @@
-:root{background-color: green;}
+:root{background-color: green;
+margin:auto;
+padding:auto;
+}
 
   
 
@@ -42,12 +45,44 @@ border:6px solid black;
 padding-bottom: 150px;
 }
 
-#div5{grid-area: 3,1,4,2;}
+#div5{grid-area: 3,1,4,2;
 
-#div6{grid-area: 3,2,4,3;}
+   justify-self: center;
+
+
+}
+
+#div6{grid-area: 3,2,4,3;
+
+   justify-self: center;
+
+
+}
 
 
 #main-head{text-align: center;font-weight: bold;font-size: 50px;}
 
 #l-card{height: 270px;width: 175px;border-radius: 7%;margin-top:80px;border:3px solid black;}
 #r-card{height: 270px;width: 175px;border-radius: 7%;margin-top:80px;border:3px solid black;}
+
+
+/*card styling*/
+
+#club-choice{ border:2px solid black;margin: 20px;padding-right: 30px;height: 30px;}
+#diamond-choice{border:2px solid black;margin: 20px;height: 30px;}
+#heart-choice{border:2px solid black;margin: 20px;padding-right: 30px;height: 30px;}
+#spade-choice{border:2px solid black;margin: 20px;padding-right: 25px;height: 30px;}
+
+#ace-choice{border:2px solid black;margin: 10px;padding-right: 10px;height: 30px;}
+#two-choice{border:2px solid black;margin: 10px;padding-right: 10px;height: 30px;}
+#three-choice{border:2px solid black;margin: 10px;padding-right: 10px;height: 30px;}
+#four-choice{border:2px solid black;margin: 10px;padding-right: 10px;height: 30px;}
+#five-choice{border:2px solid black;margin: 10px;padding-right: 10px;height: 30px;}
+#six-choice{border:2px solid black;margin: 10px;padding-right: 10px;height: 30px;}
+#seven-choice{border:2px solid black;margin: 10px;padding-right: 10px;height: 30px;}
+#eight-choice{border:2px solid black;margin:10px;padding-right: 10px;height: 30px;}
+#nine-choice{border:2px solid black;margin: 10px;padding-right: 10px;height: 30px;}
+#ten-choice{border:2px solid black;margin: 10px;padding-right: 5px;height: 30px;}
+#jack-choice{border:2px solid black;margin: 10px;padding-right: 10px; padding-left: 40px;height: 30px;}
+#queen-choice{border:2px solid black;margin: 10px;padding-right: 10px; padding-left: 40px;  height: 30px;}
+#king-choice{border:2px solid black;margin: 10px;padding-right: 10px; padding-left: 40px;height: 30px;}
