@@ -69,7 +69,8 @@ background-color: chartreuse;
 #main-head{text-align: center;font-weight: bold;font-size: 50px;}
 
 #l-card{height: 270px;width: 175px;border-radius: 7%;margin-top:80px;border:3px solid black;font-weight: bolder;font-size: larger;}
-#r-card{height: 270px;width: 175px;border-radius: 7%;margin-top:80px;border:3px solid black;}
+#r-card{height: 270px;width: 175px;border-radius: 7%;margin-top:80px;border:3px solid black;
+font-weight: bolder;font-size: larger}
 
 #choose{font-size: 20px;font-weight: bolder;color: black;}
 #acard{font-size: 20px;font-weight: bolder;color: black;}

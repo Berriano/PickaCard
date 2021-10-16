@@ -2,7 +2,11 @@
 
 // set variables
 let lCard = document.getElementById('l-card');
-let rCard = document.querySelector('#r-card');  
+let rCard = document.querySelector('#r-card'); 
+
+let mySuit ;
+let myNumber;
+
 
 let aceChoice =  document.querySelector('#ace-choice');
 let twoChoice =  document.querySelector('#two-choice');
@@ -19,6 +23,9 @@ let queenChoice =  document.querySelector('#queen-choice');
 let kingChoice =  document.querySelector('#king-choice');
 
 let clubChoice =  document.querySelector('#club-choice');
+let heartChoice =  document.querySelector('#heart-choice');
+let spadeChoice =  document.querySelector('#spade-choice');
+let diamondChoice =  document.querySelector('#diamond-choice');
 
 
 // set random card and convert special cards
@@ -52,29 +59,45 @@ let randomCard = `${randomCardNumber} of ${randomCardSuit}`;
 
 // set number and suit choice by click
 
-let mySuit ;
-let myNumber ;
-let myCard =  `${myNumber} of ${mySuit}`;
-
-
 
 
 // /set functionality
 
 
 lCard.addEventListener('click', function(){
-    lCard.textContent = randomCard;  
+    lCard.textContent =  `${randomCardNumber} of ${randomCardSuit}`;  
 });
 
 
-// club choice
+rCard.addEventListener('click', function(){
+
+    rCard.textContent =`${myNumber} of ${mySuit}`;  
+});
+
+// suit choice
 
 clubChoice.addEventListener('click', function(){
     mySuit = "Clubs";
     console.log(mySuit);
     });
 
+heartChoice.addEventListener('click', function(){
+mySuit = "Hearts";
+console.log(mySuit);
+});
 
+spadeChoice.addEventListener('click', function(){
+mySuit = "Spades";
+console.log(mySuit);
+})
+
+diamondChoice.addEventListener('click', function(){
+mySuit = "Diamonds";
+console.log(mySuit);
+})
+
+
+ //number choice 
 
 //ace choice
 
