@@ -4,7 +4,9 @@ padding:auto;
 width:70%;
 
 }
-
+.hidden{
+    display: none;
+}
   
 html{background-color: green;}
 
@@ -64,7 +66,9 @@ background-color: chartreuse;
 
 
 }
+#reset{
 
+}
 
 #main-head{text-align: center;font-weight: bold;font-size: 50px;}
 

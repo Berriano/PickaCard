@@ -7,7 +7,15 @@ let rCard = document.querySelector('#r-card');
 let mySuit ;
 let myNumber;
 
+let score = 0;
+let correctGuess = 500;
+let withinOne = 250;
+let withinTwo = 125;
+let withinThree = 75;
+let withinFour = 50;
+let withinFive = 25;
 
+//buttons
 let aceChoice =  document.querySelector('#ace-choice');
 let twoChoice =  document.querySelector('#two-choice');
 let threeChoice =  document.querySelector('#three-choice');
@@ -27,6 +35,7 @@ let heartChoice =  document.querySelector('#heart-choice');
 let spadeChoice =  document.querySelector('#spade-choice');
 let diamondChoice =  document.querySelector('#diamond-choice');
 
+let reset = document.querySelector('#reset');
 
 // set random card and convert special cards
 let randomCardNumber = Math.trunc(Math.random()*13)+1;
@@ -54,24 +63,55 @@ switch(randomCardNumber){
 
 let randomCard = `${randomCardNumber} of ${randomCardSuit}`;
 
+console.log(randomCard);
 
 
+// if statement scoring
 
-// set number and suit choice by click
-
+const scoringSystem = function(){
+if(randomCardNumber === myNumber && randomCardSuit === mySuit){
+    
+    console.log( `You score ${correctGuess} points`);
+    console.log( myNumber , randomCardNumber);
+}
+    else if((randomCardNumber - 1 || randomCardNumber +1) === myNumber  && randomCardSuit === mySuit){
+        console.log( `You score ${withinOne} points`);
+        console.log( myNumber , randomCardNumber);
+    }
+    else if ((randomCardNumber - 2 || randomCardNumber + 2) === myNumber  && randomCardSuit === mySuit){
+        console.log( `You score ${withinTwo} points`);
+        console.log( myNumber , randomCardNumber);
+    }
+    else if ((randomCardNumber - 3 || randomCardNumber +3) === myNumber  && randomCardSuit === mySuit){
+        console.log( `You score ${withinThree} points`);
+        console.log( myNumber , randomCardNumber);
+    }
+    else if ((randomCardNumber - 4 || randomCardNumber + 4) === myNumber  && randomCardSuit === mySuit){
+        console.log( `You score ${withinFour} points`);
+        console.log( myNumber , randomCardNumber);
+    }
+    else if ((randomCardNumber - 5 || randomCardNumber + 5) === myNumber  && randomCardSuit === mySuit){
+    console.log( `You score ${withinFive} points`);}
+    else {console.log('No points this time!!');console.log( myNumber , randomCardNumber);
+    }
+    }
 
 
 // /set functionality
 
 
 lCard.addEventListener('click', function(){
-    lCard.textContent =  `${randomCardNumber} of ${randomCardSuit}`;  
+    lCard.textContent =  `${randomCardNumber} of ${randomCardSuit}.`;
+    scoringSystem();
 });
 
 
 rCard.addEventListener('click', function(){
+    if(myNumber && mySuit){
 
-    rCard.textContent =`${myNumber} of ${mySuit}`;  
+    rCard.textContent =`${myNumber} of ${mySuit}`;
+}
+else    rCard.textContent =`Please Pick a Card!!`;
 });
 
 // suit choice
@@ -163,5 +203,7 @@ kingChoice.addEventListener('click', function(){
         console.log(myNumber);
         });
             
-        
-    
+                // ------------------RESET--------------------//
+
+// reset.addEventListener('click', scoringSystem())
+
