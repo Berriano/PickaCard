@@ -1,8 +1,7 @@
+'use strict';
 
 
 //generate random card number
-
-
 
 function cardNumber(){
 
@@ -103,8 +102,7 @@ cardSuit();
 wholeCard();
 
 const lBtn = document.querySelector('#l-card');
-lBtn.addEventListener('click' , function (){ wholeCard()
-});
+lBtn.addEventListener('click' , wholeCard);
 
 
 
