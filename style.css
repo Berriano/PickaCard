@@ -7,6 +7,9 @@ width:70%;
 .hidden{
     display: none;
 }
+.scorer{
+    font-weight: bolder;font-size: larger;
+}
   
 html{background-color: green;}
 
@@ -67,7 +70,7 @@ background-color: chartreuse;
 
 }
 #reset{
-
+    font-weight: bolder;font-size: larger;
 }
 
 #main-head{text-align: center;font-weight: bold;font-size: 50px;}
