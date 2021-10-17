@@ -3,6 +3,8 @@
 // set variables
 let lCard = document.getElementById('l-card');
 let rCard = document.querySelector('#r-card'); 
+let scoreCard = document.querySelector('.scorer');
+
 
 let mySuit ;
 let myNumber;
@@ -65,34 +67,52 @@ let randomCard = `${randomCardNumber} of ${randomCardSuit}`;
 
 console.log(randomCard);
 
+// //scorecard
+// scoreCard.textContent = `Score:${score}`;
 
 // if statement scoring
 
 const scoringSystem = function(){
 if(randomCardNumber === myNumber && randomCardSuit === mySuit){
-    
+    scoreCard.textContent = `Score:${score+= correctGuess}`;
     console.log( `You score ${correctGuess} points`);
-    console.log( myNumber , randomCardNumber);
-}
-    else if((randomCardNumber - 1 || randomCardNumber +1) === myNumber  && randomCardSuit === mySuit){
-        console.log( `You score ${withinOne} points`);
-        console.log( myNumber , randomCardNumber);
-    }
-    else if ((randomCardNumber - 2 || randomCardNumber + 2) === myNumber  && randomCardSuit === mySuit){
-        console.log( `You score ${withinTwo} points`);
-        console.log( myNumber , randomCardNumber);
-    }
-    else if ((randomCardNumber - 3 || randomCardNumber +3) === myNumber  && randomCardSuit === mySuit){
-        console.log( `You score ${withinThree} points`);
-        console.log( myNumber , randomCardNumber);
-    }
-    else if ((randomCardNumber - 4 || randomCardNumber + 4) === myNumber  && randomCardSuit === mySuit){
-        console.log( `You score ${withinFour} points`);
-        console.log( myNumber , randomCardNumber);
-    }
-    else if ((randomCardNumber - 5 || randomCardNumber + 5) === myNumber  && randomCardSuit === mySuit){
+    console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);  
+
+}  else if ((randomCardNumber - 5) || (randomCardNumber + 5) === myNumber  && randomCardSuit === mySuit){
+    scoreCard.textContent = `Score:${score + withinFive}`;
     console.log( `You score ${withinFive} points`);}
-    else {console.log('No points this time!!');console.log( myNumber , randomCardNumber);
+
+    else if ((randomCardNumber - 4) ||(randomCardNumber + 4) === myNumber  && randomCardSuit === mySuit){
+        scoreCard.textContent = `Score:${score + withinFour}`;
+        console.log( `You score ${withinFour} points`);
+        console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+    }
+
+
+    else if ((randomCardNumber - 3) || (randomCardNumber +3) === myNumber  && randomCardSuit === mySuit){
+        scoreCard.textContent = `Score:${score + withinThree}`;
+        console.log( `You score ${withinThree} points`);
+        console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+    }
+
+    else if ((randomCardNumber - 2) || (randomCardNumber + 2) === myNumber  && randomCardSuit === mySuit){
+        scoreCard.textContent = `Score:${score + withinTwo}`;
+        console.log( `You score ${withinTwo} points`);
+        console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+    }
+
+
+    else if((randomCardNumber - 1) ||( randomCardNumber +1) === myNumber  && randomCardSuit === mySuit){
+        scoreCard.textContent = `Score:${score + withinOne}`;
+        console.log( `You score ${withinOne} points`);
+        console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+    }
+   
+  
+    
+
+    else {console.log('No points this time!!');
+    console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
     }
     }
 
