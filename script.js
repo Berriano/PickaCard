@@ -17,6 +17,8 @@ let withinThree = 75;
 let withinFour = 50;
 let withinFive = 25;
 let correctNumber = 15;
+let correctSuit = 10;
+let correctColor = 5;
 
 //buttons
 let aceChoice =  document.querySelector('#ace-choice');
@@ -61,90 +63,89 @@ let randomCard = `${randomCardNumber} of ${randomCardSuit}`;
 
 console.log(randomCard);
 
-// //scorecard
 
-
-// switch statement scoring
-
+// scoring
 
 const switchScoring = function(){ 
 
-switch (randomCard) {
 
-    case  `${myNumber} of ${mySuit}` :
-        scoreCard.textContent = `Score:${score += correctGuess}`;
-           console.log( `You score ${correctGuess} points`);
-              console.log( myNumber, mySuit , randomCardNumber, randomCardSuit); 
-         break;
-
-
-    case `${myNumber+4} of ${mySuit}`:
-        scoreCard.textContent = `Score:${score +=withinFour}`;
-            console.log( `You score ${withinFour} points`);
-              console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
-              break;
-
-     case `${myNumber-4} of ${mySuit}`:
-                scoreCard.textContent = `Score:${score += withinFour}`;
-                    console.log( `You score ${withinFour} points`);
-                      console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
-                      break;
-        
-
-    case `${myNumber+3} of ${mySuit}` :
-        scoreCard.textContent = `Score:${score += withinThree}`;
-            console.log( `You score ${withinThree} points`);
-                console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
-                break;
-                
-    case `${myNumber-3} of ${mySuit}` :
-                    scoreCard.textContent = `Score:${score += withinThree}`;
-                        console.log( `You score ${withinThree} points`);
-                            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
-                            break;
-            
-    case`${myNumber+2} of ${mySuit}`:
-
-            scoreCard.textContent = `Score:${score += withinTwo}`;
-                 console.log( `You score ${withinTwo} points`);
-                   console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
-                   break;
-                 
-    case`${myNumber-2} of ${mySuit}`:
-
-                   scoreCard.textContent = `Score:${score += withinTwo}`;
-                        console.log( `You score ${withinTwo} points`);
-                          console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
-                          break;
-
-     case  `${myNumber-1} of ${mySuit}`  :
-                      scoreCard.textContent = `Score:${score += withinOne}`;
-                        console.log( `You score ${withinOne} points`);
-                            break;
-                      
-                      
-      case `${myNumber+1} of ${mySuit}`  :
-                        scoreCard.textContent = `Score:${score += withinOne}`;
-                        console.log( `You score ${withinOne} points`);
-                            break;
-
-            //-------------------number scoring not working -------------------------//
-
-        case  myNumber: 
-            scoreCard.textContent = `Score:${score += correctNumber}`;
-            break;
-            
-
-        default :console.log(`NO POINTS SCORED`);
-        break;
-    }
-
+if(myNumber===randomCardNumber && mySuit === randomCardSuit){
+     scoreCard.textContent = `Score:${score += correctGuess}`;
+        console.log( `You score ${correctGuess} points`);
+          console.log( myNumber, mySuit , randomCardNumber, randomCardSuit); 
+ } 
+else if((myNumber+5) === randomCardNumber && mySuit === randomCardSuit){
+    scoreCard.textContent = `Score:${score +=withinFive}`;
+     console.log( `You score ${withinFive} points`);
+        console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+ }
+else if((myNumber-5) === randomCardNumber && mySuit === randomCardSuit){
+    scoreCard.textContent = `Score:${score +=withinFive}`;
+       console.log( `You score ${withinFive} points`);
+          console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+}
+else if((myNumber-4) === randomCardNumber && mySuit === randomCardSuit){
+ scoreCard.textContent = `Score:${score +=withinFour}`;
+    console.log( `You score ${withinFour} points`);
+         console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+}
+else if((myNumber+4) === randomCardNumber && mySuit === randomCardSuit){
+scoreCard.textContent = `Score:${score +=withinFour}`;
+ console.log( `You score ${withinFour} points`);
+    console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+}
+else if((myNumber-3) === randomCardNumber && mySuit === randomCardSuit){
+    scoreCard.textContent = `Score:${score +=withinThree}`;
+        console.log( `You score ${withinThree} points`);
+            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+}
+else if((myNumber+3) === randomCardNumber && mySuit === randomCardSuit){
+    scoreCard.textContent = `Score:${score +=withinThree}`;
+        console.log( `You score ${withinThree} points`);
+            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+}
+else if((myNumber-2) === randomCardNumber && mySuit === randomCardSuit){
+    scoreCard.textContent = `Score:${score +=withinTwo}`;
+        console.log( `You score ${withinTwo} points`);
+            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+}
+else if((myNumber+2) === randomCardNumber && mySuit === randomCardSuit){
+    scoreCard.textContent = `Score:${score +=withinTwo}`;
+        console.log( `You score ${withinTwo} points`);
+            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+}
+else if((myNumber-1) === randomCardNumber && mySuit === randomCardSuit){
+    scoreCard.textContent = `Score:${score +=withinOne}`;
+        console.log( `You score ${withinOne} points`);
+            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+}
+else if((myNumber+1) === randomCardNumber && mySuit === randomCardSuit){
+    scoreCard.textContent = `Score:${score +=withinOne}`;
+        console.log( `You score ${withinOne} points`);
+            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+}
+else if (myNumber === randomCardNumber && mySuit !== randomCardSuit){
+    scoreCard.textContent = `Score:${score += correctNumber}`;
+        console.log( `You score ${correctNumber} points`);
+            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+}
+else if(myNumber !== randomCardNumber && mySuit === randomCardSuit){
+    scoreCard.textContent = `Score:${score += correctSuit}`;
+        console.log( `You score ${correctSuit} points`);
+            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
 }
 
+//------------------------- sort correct card color--------------------------------//
 
 
-  // scoringSystem();
-  switchScoring();
+// else if(myNumber !== randomCardNumber && mySuit === randomCardSuit){
+//     scoreCard.textContent = `Score:${score +=withinFive}`;
+//         console.log( `You score ${withinFive} points`);
+//             console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+// }
+
+} 
+
 
   // /set functionality
 lCard.addEventListener('click', function(){
@@ -160,6 +161,8 @@ switch(randomCardNumber){
     break;
 }
   lCard.textContent =  `${randomCardNumber} of ${randomCardSuit}.`;
+  
+switchScoring();
   
 });
 
@@ -214,7 +217,7 @@ console.log(mySuit);
 //ace choice
 
 aceChoice.addEventListener('click',function(){
-    // myNumber = "Ace";
+   
     myNumber = 1;
     console.log(myNumber);
     });
@@ -264,17 +267,17 @@ tenChoice.addEventListener('click', function(){
     console.log(myNumber);
     });
 jackChoice.addEventListener('click', function(){
-// myNumber = "Jack";
+
 myNumber = 11;
 console.log(myNumber);
 });
 queenChoice.addEventListener('click', function(){
-    // myNumber = "Queen";
+    
     myNumber = 12;
     console.log(myNumber);
     });
 kingChoice.addEventListener('click', function(){
-        // myNumber = "King";
+       
         myNumber = 13;
         console.log(myNumber);
         });
@@ -286,6 +289,7 @@ kingChoice.addEventListener('click', function(){
     randomCardNumber = Math.trunc(Math.random()*13)+1;
     randomCardSuit = Math.trunc(Math.random()*4)+1;
     
+  
     switch(randomCardSuit){
     
         case 1 : randomCardSuit = 'Hearts';
