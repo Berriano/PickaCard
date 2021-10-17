@@ -148,6 +148,10 @@ else if(myNumber !== randomCardNumber && mySuit === randomCardSuit){
 
 
   // /set functionality
+
+  const myNumFunc = myNo =>{ myNumber = myNo;
+  console.log(myNumber);};
+
 lCard.addEventListener('click', function(){
 
 switch(randomCardNumber){
@@ -217,70 +221,50 @@ console.log(mySuit);
 //ace choice
 
 aceChoice.addEventListener('click',function(){
-   
-    myNumber = 1;
-    console.log(myNumber);
-    });
-//two choice
+myNumFunc(1);
+})
 
 twoChoice.addEventListener('click', function(){
-    myNumber = 2;
-    console.log(myNumber);
-    });
-
-// three choice
+myNumFunc(2);
+})
 
 threeChoice.addEventListener('click', function(){
-    myNumber = 3;
-    console.log(myNumber);
-    });
+myNumFunc(3);
+})
 
 fourChoice.addEventListener('click', function(){
-    myNumber = 4;
-    console.log(myNumber);
-    });
+myNumFunc(4);
+})
 
 fiveChoice.addEventListener('click', function(){
-  myNumber = 5;
-  console.log(myNumber);
-   });
+myNumFunc(5);
+})
 
  sixChoice.addEventListener('click', function(){
-     myNumber = 6;
-            console.log(myNumber);
-            });
+myNumFunc(6);
+ })
 sevenChoice.addEventListener('click', function(){
-myNumber = 7;
-console.log(myNumber);
-});
+myNumFunc(7);
+})
 
 eightChoice.addEventListener('click', function(){
-myNumber = 8;
-console.log(myNumber);
-});
+myNumFunc(8);
+})
 nineChoice.addEventListener('click', function(){
-myNumber = 9;
-console.log(myNumber);
-});
+myNumFunc(9);
+})
 tenChoice.addEventListener('click', function(){
-    myNumber = 10;
-    console.log(myNumber);
-    });
+myNumFunc(10);
+})
 jackChoice.addEventListener('click', function(){
-
-myNumber = 11;
-console.log(myNumber);
-});
+myNumFunc(11);
+})
 queenChoice.addEventListener('click', function(){
-    
-    myNumber = 12;
-    console.log(myNumber);
-    });
+myNumFunc(12);
+})
 kingChoice.addEventListener('click', function(){
-       
-        myNumber = 13;
-        console.log(myNumber);
-        });
+myNumFunc(13);
+})
             
                 // ------------------RESET--------------------//
 
