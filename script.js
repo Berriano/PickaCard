@@ -10,15 +10,9 @@ let mySuit ;
 let myNumber;
 
 let score = 0;
-let correctGuess = 500;
-let withinOne = 250;
-let withinTwo = 125;
-let withinThree = 75;
-let withinFour = 50;
-let withinFive = 25;
-let correctNumber = 15;
-let correctSuit = 10;
-let correctColor = 5;
+const scoreArray =[5,10,15,25,50,75,125,250,500]
+
+
 
 //buttons
 let aceChoice =  document.querySelector('#ace-choice');
@@ -69,80 +63,72 @@ console.log(randomCard);
 const switchScoring = function(){ 
 
 
-if(myNumber===randomCardNumber && mySuit === randomCardSuit){
-     scoreCard.textContent = `Score:${score += correctGuess}`;
-        console.log( `You score ${correctGuess} points`);
-          console.log( myNumber, mySuit , randomCardNumber, randomCardSuit); 
+if(matchUpFunc(myNumber)){
+     scoreCardFunc(`Score:${score += scoreArray[8]}`);
+        console.log( `You score ${scoreArray[8]} points`);
+          
  } 
-else if((myNumber+5) === randomCardNumber && mySuit === randomCardSuit){
-    scoreCard.textContent = `Score:${score +=withinFive}`;
-     console.log( `You score ${withinFive} points`);
-        console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+else if(matchUpFunc(myNumber+5)){
+    scoreCardFunc(`Score:${score += scoreArray[3]}`);
+     console.log( `You score ${scoreArray[3]} points`);
+       
  }
-else if((myNumber-5) === randomCardNumber && mySuit === randomCardSuit){
-    scoreCard.textContent = `Score:${score +=withinFive}`;
-       console.log( `You score ${withinFive} points`);
-          console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+else if(matchUpFunc(myNumber-5)){
+   scoreCardFunc( `Score:${score +=scoreArray[3]}`);
+       console.log( `You score ${scoreArray[3]} points`);
+         
 }
-else if((myNumber-4) === randomCardNumber && mySuit === randomCardSuit){
- scoreCard.textContent = `Score:${score +=withinFour}`;
-    console.log( `You score ${withinFour} points`);
-         console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+else if(matchUpFunc(myNumber-4)){
+scoreCardFunc( `Score:${score += scoreArray[4]}`);
+    console.log( `You score ${ scoreArray[4]} points`);
+        
 }
-else if((myNumber+4) === randomCardNumber && mySuit === randomCardSuit){
-scoreCard.textContent = `Score:${score +=withinFour}`;
- console.log( `You score ${withinFour} points`);
-    console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+else if(matchUpFunc(myNumber+4)){
+scoreCard.textContent = `Score:${score += scoreArray[4]}`;
+ console.log( `You score ${ scoreArray[4]} points`);
+   
 }
-else if((myNumber-3) === randomCardNumber && mySuit === randomCardSuit){
-    scoreCard.textContent = `Score:${score +=withinThree}`;
-        console.log( `You score ${withinThree} points`);
-            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+else if(matchUpFunc(myNumber-3)){
+   scoreCardFunc( `Score:${score += scoreArray[5]}`);
+        console.log( `You score ${ scoreArray[5]} points`);
+           
 }
-else if((myNumber+3) === randomCardNumber && mySuit === randomCardSuit){
-    scoreCard.textContent = `Score:${score +=withinThree}`;
-        console.log( `You score ${withinThree} points`);
-            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+else if(matchUpFunc(myNumber+3)){
+   scoreCardFunc( `Score:${score += scoreArray[5]}`);
+        console.log( `You score ${ scoreArray[5]} points`);
+           
 }
-else if((myNumber-2) === randomCardNumber && mySuit === randomCardSuit){
-    scoreCard.textContent = `Score:${score +=withinTwo}`;
-        console.log( `You score ${withinTwo} points`);
-            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+else if(matchUpFunc(myNumber-2)){
+   scoreCardFunc( `Score:${score += scoreArray[6]}`);
+        console.log( `You score ${ scoreArray[6]} points`);
+           
 }
-else if((myNumber+2) === randomCardNumber && mySuit === randomCardSuit){
-    scoreCard.textContent = `Score:${score +=withinTwo}`;
-        console.log( `You score ${withinTwo} points`);
-            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+else if(matchUpFunc(myNumber+2)){
+   scoreCardFunc( `Score:${score += scoreArray[6]}`);
+        console.log( `You score ${ scoreArray[6]} points`);
+           
 }
-else if((myNumber-1) === randomCardNumber && mySuit === randomCardSuit){
-    scoreCard.textContent = `Score:${score +=withinOne}`;
-        console.log( `You score ${withinOne} points`);
-            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+else if(matchUpFunc(myNumber-1)){
+   scoreCardFunc( `Score:${score += scoreArray[7]}`);
+        console.log( `You score ${ scoreArray[7]} points`);
+           
 }
-else if((myNumber+1) === randomCardNumber && mySuit === randomCardSuit){
-    scoreCard.textContent = `Score:${score +=withinOne}`;
-        console.log( `You score ${withinOne} points`);
-            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+else if(matchUpFunc(myNumber+1)){
+    scoreCardFunc( `Score:${score += scoreArray[7]}`);
+        console.log( `You score ${ scoreArray[7]} points`);
+           
 }
 else if (myNumber === randomCardNumber && mySuit !== randomCardSuit){
-    scoreCard.textContent = `Score:${score += correctNumber}`;
-        console.log( `You score ${correctNumber} points`);
-            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+    scoreCardFunc( `Score:${score +=  scoreArray[2]}`);
+        console.log( `You score ${ scoreArray[2]} points`);
+           
 }
 else if(myNumber !== randomCardNumber && mySuit === randomCardSuit){
-    scoreCard.textContent = `Score:${score += correctSuit}`;
-        console.log( `You score ${correctSuit} points`);
-            console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
+    scoreCardFunc( `Score:${score += scoreArray[1]}`);
+        console.log( `You score ${scoreArray[1]} points`);
+           
 }
 
-//------------------------- sort correct card color--------------------------------//
-
-
-// else if(myNumber !== randomCardNumber && mySuit === randomCardSuit){
-//     scoreCard.textContent = `Score:${score +=withinFive}`;
-//         console.log( `You score ${withinFive} points`);
-//             console.log( myNumber, mySuit , randomCardNumber, randomCardSuit);
-// }
 
 } 
 
@@ -151,6 +137,8 @@ else if(myNumber !== randomCardNumber && mySuit === randomCardSuit){
 
   const myNumFunc = myNo =>{ myNumber = myNo;
   console.log(myNumber);};
+  const scoreCardFunc = scoreText => scoreCard.textContent = scoreText;
+  const matchUpFunc= match => match ===randomCardNumber && mySuit === randomCardSuit;
 
 lCard.addEventListener('click', function(){
 
