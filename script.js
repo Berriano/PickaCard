@@ -10,12 +10,12 @@ let mySuit ;
 let myNumber;
 
 let score = 0;
-const scoreArray =[5,10,15,25,50,75,125,250,500]
+const scoreArray = [5,10,15,25,50,75,125,250,500]
 
 
 // /set functionality
 const myNumFunc = myNo =>{ myNumber = myNo;
-    console.log(myNumber)};
+    console.log(myNumber);};
 
 const scoreCardFunc = scoreText => scoreCard.textContent = scoreText;
 
@@ -25,6 +25,7 @@ const querySelect =  card =>  document.querySelector(card);
 
 const suitChoice = suit => { mySuit = suit;
 console.log(mySuit)};
+
 
 
 //button selectors
@@ -58,13 +59,13 @@ let randomCardSuit = Math.trunc(Math.random()*4)+1;
 
 switch(randomCardSuit){
 
-    case 1 : randomCardSuit = 'Hearts';
+    case 1 : randomCardSuit = 'Hearts ♥';
     break;
-    case 2 : randomCardSuit = 'Spades';
+    case 2 : randomCardSuit = 'Spades ♥';
     break;
-    case 3 : randomCardSuit = 'Clubs';
+    case 3 : randomCardSuit = 'Clubs ♣';
     break;
-    case 4 : randomCardSuit = 'Diamonds';
+    case 4 : randomCardSuit = 'Diamonds ♦';
     break;
 }
 
@@ -74,7 +75,7 @@ console.log(randomCard);
 
 
 // scoring
-const switchScoring = function(){ 
+function switchScoring(){ 
 
 
 if(matchUpFunc(myNumber)){
@@ -140,49 +141,37 @@ else if (myNumber === randomCardNumber && mySuit !== randomCardSuit){
 else if(myNumber !== randomCardNumber && mySuit === randomCardSuit){
     scoreCardFunc( `Score:${score += scoreArray[1]}`);
         // console.log( `You score ${scoreArray[1]} points`);
-           
-}
+    }
+};
 
-
-} 
-
-
- ;
-
-lCard.addEventListener('click', function(){
-
-switch(randomCardNumber){
-    case 1: randomCardNumber =  "Ace";
-    break;
-    case 11: randomCardNumber = "Jack";
-    break;
-    case 12: randomCardNumber = "Queen";
-    break;    
-    case 13: randomCardNumber = "King";
-    break;
-}
-  lCard.textContent =  `${randomCardNumber} of ${randomCardSuit}.`;
-  
-switchScoring();
-  
-});
 
 
 rCard.addEventListener('click', function(){
-
+    switchScoring();
     if(myNumber && mySuit){
 
-        switch(myNumber){
-            case 1: myNumber =  "Ace";
-            break;
-            case 11: myNumber = "Jack";
-            break;
-            case 12: myNumber = "Queen";
-            break;
-            case 13: myNumber = "King";
-            break;
-        }       
+           if(myNumber == 1) myNumber =  "Ace 🍙";
+            else if(myNumber == 11) myNumber = "Jack 🛡";
+            else if(myNumber == 12) myNumber = "Queen 👑";
+            else if(myNumber == 13) myNumber = "King 👑";
+                
     rCard.textContent =`${myNumber} of ${mySuit}`;
+    rCard.style.fontSize = "25px";
+
+
+    switch(randomCardNumber){
+        case 1: randomCardNumber =  "Ace 🍙";
+        break;
+        case 11: randomCardNumber = "Jack 🛡";
+        break;
+        case 12: randomCardNumber = "Queen 👑";
+        break;    
+        case 13: randomCardNumber = "King 👑";
+        break;
+    };
+
+    lCard.textContent =  `${randomCardNumber} of ${randomCardSuit}.`;  
+    lCard.style.fontSize = "25px";
 }
 else    rCard.textContent =`Please Pick a Card!!`;
 });
@@ -190,19 +179,21 @@ else    rCard.textContent =`Please Pick a Card!!`;
 // suit choice
 
 clubChoice.addEventListener('click', function(){
-    suitChoice("Clubs")
+    suitChoice("Clubs ♣")
     });
 
+
+
 heartChoice.addEventListener('click', function(){
-    suitChoice("Hearts")
+    suitChoice("Hearts ♥")
 });
 
 spadeChoice.addEventListener('click', function(){
-    suitChoice("Spades")
+    suitChoice("Spades ♠")
 })
 
 diamondChoice.addEventListener('click', function(){
-    suitChoice("Diamonds")
+    suitChoice("Diamonds ♦")
 })
 
 
@@ -266,19 +257,21 @@ myNumFunc(13);
   
     switch(randomCardSuit){
     
-        case 1 : randomCardSuit = 'Hearts';
+        case 1 : randomCardSuit = 'Hearts ♥';
         break;
-        case 2 : randomCardSuit = 'Spades';
+        case 2 : randomCardSuit = 'Spades ♠';
         break;
-        case 3 : randomCardSuit = 'Clubs';
+        case 3 : randomCardSuit = 'Clubs ♣';
         break;
-        case 4 : randomCardSuit = 'Diamonds';
+        case 4 : randomCardSuit = 'Diamonds ♦';
         break;
     }
     randomCard = `${randomCardNumber} of ${randomCardSuit}`;
      console.log(randomCard);
 
-     lCard.textContent = `Guess again and click me.....`
+     lCard.style.fontSize = "25px";
+     lCard.textContent = `Guess again `
+     rCard.textContent = `and click me.....`
 
 
  })
