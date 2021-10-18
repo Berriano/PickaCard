@@ -1,4 +1,5 @@
-'use strict';
+function myStrict(){'use strict';}
+myStrict();
 
 // set variables
 let lCard = document.getElementById('l-card');
@@ -10,12 +11,12 @@ let mySuit ;
 let myNumber;
 
 let score = 0;
-const scoreArray = [5,10,15,25,50,75,125,250,500]
+const scoreArray = [5,10,15,25,50,75,125,250,500];
 
 
 // /set functionality
-const myNumFunc = myNo =>{ myNumber = myNo;
-    console.log(myNumber);};
+const myNumFunc = myNo => myNumber = myNo;
+  
 
 const scoreCardFunc = scoreText => scoreCard.textContent = scoreText;
 
@@ -23,8 +24,8 @@ const matchUpFunc= match => match ===randomCardNumber && mySuit === randomCardSu
 
 const querySelect =  card =>  document.querySelector(card);
 
-const suitChoice = suit => { mySuit = suit;
-console.log(mySuit)};
+const suitChoice = suit =>  mySuit = suit;
+
 
 
 
@@ -142,7 +143,7 @@ else if(myNumber !== randomCardNumber && mySuit === randomCardSuit){
     scoreCardFunc( `Score:${score += scoreArray[1]}`);
         // console.log( `You score ${scoreArray[1]} points`);
     }
-};
+}
 
 
 
@@ -168,7 +169,7 @@ rCard.addEventListener('click', function(){
         break;    
         case 13: randomCardNumber = "King 👑";
         break;
-    };
+    }
 
     lCard.textContent =  `${randomCardNumber} of ${randomCardSuit}.`;  
     lCard.style.fontSize = "25px";
@@ -179,22 +180,22 @@ else    rCard.textContent =`Please Pick a Card!!`;
 // suit choice
 
 clubChoice.addEventListener('click', function(){
-    suitChoice("Clubs ♣")
+    suitChoice("Clubs ♣");
     });
 
 
 
 heartChoice.addEventListener('click', function(){
-    suitChoice("Hearts ♥")
+    suitChoice("Hearts ♥");
 });
 
 spadeChoice.addEventListener('click', function(){
-    suitChoice("Spades ♠")
-})
+    suitChoice("Spades ♠");
+});
 
 diamondChoice.addEventListener('click', function(){
-    suitChoice("Diamonds ♦")
-})
+    suitChoice("Diamonds ♦");
+});
 
 
  //number choice 
@@ -203,49 +204,47 @@ diamondChoice.addEventListener('click', function(){
 
 aceChoice.addEventListener('click',function(){
 myNumFunc(1);
-})
+});
 
 twoChoice.addEventListener('click', function(){
 myNumFunc(2);
-})
+});
 
 threeChoice.addEventListener('click', function(){
 myNumFunc(3);
-})
-
+});
 fourChoice.addEventListener('click', function(){
 myNumFunc(4);
-})
+});
 
 fiveChoice.addEventListener('click', function(){
 myNumFunc(5);
-})
-
+});
  sixChoice.addEventListener('click', function(){
 myNumFunc(6);
- })
+ });
 sevenChoice.addEventListener('click', function(){
 myNumFunc(7);
-})
+});
 
 eightChoice.addEventListener('click', function(){
 myNumFunc(8);
-})
+});
 nineChoice.addEventListener('click', function(){
 myNumFunc(9);
-})
+});
 tenChoice.addEventListener('click', function(){
 myNumFunc(10);
-})
+});
 jackChoice.addEventListener('click', function(){
 myNumFunc(11);
-})
+});
 queenChoice.addEventListener('click', function(){
 myNumFunc(12);
-})
+});
 kingChoice.addEventListener('click', function(){
 myNumFunc(13);
-})
+});
             
                 // ------------------RESET--------------------//
 
@@ -270,9 +269,9 @@ myNumFunc(13);
      console.log(randomCard);
 
      lCard.style.fontSize = "25px";
-     lCard.textContent = `Guess again `
-     rCard.textContent = `and click me.....`
+     lCard.textContent = `Guess again `;
+     rCard.textContent = `and click me.....`;
 
 
- })
+ });
 
